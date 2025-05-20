@@ -1,0 +1,14 @@
+<div class="timer-container">
+
+    <var class="time-display">{{ ms }}</var>
+    
+    <div class="buttons-container">
+
+        <button class="button" (click)="startTimer()" [disabled]="isRunning">Play</button>
+        <button class="button" (click)="pauseTimer()" [disabled]="!isRunning">Pause</button>
+        <button class="button" (click)="resetTimer()" [disabled]="ms === 0">Reset</button>
+        
+    </div>
+    <p>Format long : {{ ms | timefmt:'long' }}</p>
+    <p>Format court : {{ ms | timefmt:'short' }}</p>
+</div>

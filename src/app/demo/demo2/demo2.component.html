@@ -1,0 +1,48 @@
+<section class="demo">
+    <h2>Demo 2 : Les Pipes 🚬</h2>
+    <p>Propre à Angular, ils permettent de formatter les données à l'affichage.</p>
+
+    <h3>Les pipes déjà existants :</h3>
+
+    <h4>Les pipes string</h4>
+    <p>Sans pipe : {{ bonjour }}</p>
+    <p>En majuscule : {{ bonjour | uppercase }} </p>
+    <p>En minuscule : {{ bonjour | lowercase }} </p>
+    <p>En kikoo msn : {{ bonjour | titlecase }} </p>
+
+    <h4>Les pipes number</h4>
+    <p>Un menu burger cheese</p>
+    <p>Sans pipe : {{ prix }} €</p>
+    <!-- Le pipe number attend un paramètre 'X.Y-Z' où X est le nombre minimum de chiffre attendus avant la virgule. Y est le minimum attendu après la virgule et Z est le maximum attendu après la virgule -->
+    <p>Avec pipe pour arrondir : {{ prix | number : '0.0-2' }} €</p>
+
+    <h4>Les pipes de monnaie</h4>
+    <p>Avec pipe de monnaie {{ prix | currency }} </p>
+    <p>Avec pipe de monnaie {{ prix | currency : 'EUR' }} </p>
+
+    <h4>Les pipes de date</h4>
+    <p>Sans pipe : {{ ajd }} </p>
+    <p>Avec pipe (sans param) : {{ ajd | date }}</p>
+    <p>Avec pipe (avec param basique): {{ ajd | date : 'dd/MM/yyyy' }}</p>
+
+    <h4>Le pipe json</h4>
+    <!-- Utile pour du debug -->
+    <p>{{ aude | json }}</p>
+
+    <h3>Créer ses propres pipes : </h3>
+    <input type="number" [(ngModel)]="temp" placeholder="37" />
+    <label for="unit">Unité d'entrée: </label>
+    <select [(ngModel)]="unitFrom" name="unit" default="C"> 
+        <option value="C">Celsius</option>
+        <option value="F">Fahrenheit</option>
+        <option value="K">Kelvin</option>
+    </select>
+    <label for="unitOut">Unité de sortie: </label>
+    <select [(ngModel)]="unitTo" name="unitOut" default="F"> 
+        <option value="C">Celsius</option>
+        <option value="F">Fahrenheit</option>
+        <option value="K">Kelvin</option>
+    </select>
+    
+    <p>Température : {{ temp | temperature : unitFrom + '-' + unitTo }}</p>
+</section>

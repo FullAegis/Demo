@@ -1,1 +1,53 @@
-/* You can add global styles to this file, and also import other style files */
+// Mini reset css 
+// J'enlève la marge et le padding qu'il y a par défaut sur tous les éléments
+* {
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box; //Pour indiquer que le calcul de la taille d'un élément n'inclus pas la bordure et le padding donc si je fais un élément de 400px de large, il fera 400px de large même si je rajoute une bordure et/ou un padding
+}
+
+.app {
+    display: flex;
+    min-height: 100vh; //La hauteur de la balise doit faire minimum 100% de la hauteur de la fenêtre
+    background-color: whitesmoke;
+}
+
+.navbar {
+    background-color: lightsteelblue;
+    min-height: 100%; //100% de son parent donc de .app
+    width: 20%;
+    padding: 1rem 2rem;
+
+    h2 {
+       margin: 1rem 0; 
+    }
+
+    ul {
+        list-style: none;
+
+        a {
+            color : darkblue;
+            text-decoration: none;
+        }
+    }
+}
+
+.demo {
+    padding: 1rem 2rem;
+
+    h1 {
+        margin-bottom: 1.5rem;
+        text-transform: uppercase;
+        color : darkblue;
+    }
+
+    h2 {
+        margin : 0.5rem 0;
+        color : darkblue;
+    }
+
+    h3 {
+        color : darkseagreen;
+        margin: 0.5rem 0;
+    }
+}

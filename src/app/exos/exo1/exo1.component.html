@@ -1,0 +1,42 @@
+<div [hidden]="showCharacter">
+    <h2>Création du personnage : </h2>
+    <input type="text" [(ngModel)]="name" placeholder="Nom du personnage" />
+    <input type="number" [(ngModel)]="level" placeholder="Niveau du personnage" />
+
+    <select [(ngModel)]="race">
+        <option value="humain">Humain</option>
+        <option value="elfe">Elfe</option>
+        <option value="nain">Nain</option>
+        <option value="orc">Orc</option>
+        <option value="gobelin">Gobelin</option>
+        <option value="sorcier">Sorcier</option>
+        <option value="demon">Démon</option>
+        <option value="squelette">Squelette</option>
+        <option value="zombie">Zombie</option>
+        <option value="vampire">Vampire</option>
+        <option value="centaure">Centaure</option>
+    </select>   
+
+    <select [(ngModel)]="className">
+        <option value="archer">Archer</option>
+        <option value="barbare">Barbare</option>
+        <option value="druide">Druide</option>
+        <option value="paladin">Paladin</option>
+        <option value="guerrier">Guerrier</option>
+        <option value="mage">Mage</option>
+        <option value="voleur">Voleur</option>
+    </select>
+
+    <input type="url" [(ngModel)]="imgSrc" placeholder="Image du personnage" />
+
+    <button (click)="createCharacter()">Créer le personnage</button>
+</div>
+<div [hidden]="!showCharacter">
+    <h2>Ficke du personnage :</h2>
+    <img [src]="imgSrc" [alt]="name" />
+    <h2>Nom : {{ name }}</h2><br/>
+    <h3>Classe : {{ className }}</h3>
+        
+    <h4>Niveau : {{ level }}</h4>
+    <h4>Race : {{ race }}</h4>
+</div>
