@@ -17,8 +17,8 @@ export class Exo2Component {
   private setTime() : void { this.ms = new Date().getTime() - this.getTime(); }
   startTimer(): void {
     if (!this.isRunning) {
-      this.time = new Date();
       this.isRunning = true;
+      if (this.#interval === null) this.time = new Date();
       this.#interval = setInterval(() => this.setTime(), 1);
     }
   }
