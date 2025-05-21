@@ -1,1 +1,18 @@
-<p>exo3 works!</p>
+<section id="exo3">
+  <div class="cart">
+    <div class="cart-top">
+      <input type="text" placeholder="Product name" [(ngModel)]="prod" (keydown.enter)="add()"/>
+      <button class="btn" (click)="add()" [disabled]="!prod.trim()">Add</button>
+    </div>
+    <div class="cart-bot">
+      @for (product of cart; track product) {
+        <div class="product" [ngClass]="{'trolon': prod.length > 10}">{{ product }}</div>
+        @if (product.includes('patate')) {
+          🥔
+        }
+      } @empty {
+        <div class="product empty">Nope</div>
+      }
+    </div>
+  </div>
+</section>
