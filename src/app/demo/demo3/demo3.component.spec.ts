@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Demo3Component } from './demo3.component';
+import { SoundDirective} from '../../core/directives/sound.directive';
 
 describe('Demo3Component', () => {
   let component: Demo3Component;
